@@ -16,7 +16,7 @@
 
 import Foundation
 
-struct HistorgramShapeMismatch: Error {}
+struct HistogramShapeMismatch: Error {}
 
 /// Histograms are stored with exponentially increasing bucket sizes.
 /// The first bucket is [0, `multiplier`) where `multiplier` = 1 + resolution
@@ -103,7 +103,7 @@ public struct Histogram {
     guard (self.buckets.count == source.buckets.count) ||
       (self.multiplier == source.multiplier) else {
       // Fail because these histograms don't match.
-      throw HistorgramShapeMismatch()
+      throw HistogramShapeMismatch()
     }
 
     self.sum += source.sum
