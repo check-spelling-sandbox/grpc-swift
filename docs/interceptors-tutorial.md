@@ -259,7 +259,7 @@ In another terminal run the client without the interceptors with:
 
 ```
 $ swift run Echo client "Hello"
-get receieved: Swift echo get: Hello
+get received: Swift echo get: Hello
 get completed with status: ok (0)
 ```
 
@@ -273,7 +273,7 @@ $ swift run Echo client --intercept "Hello"
 > Closing request stream
 < Received headers: [':status': '200', 'content-type': 'application/grpc']
 < Received response with text 'Swift echo get: Hello'
-get receieved: Swift echo get: Hello
+get received: Swift echo get: Hello
 < Response stream closed with status: 'ok (0): OK' and trailers: ['grpc-status': '0', 'grpc-message': 'OK']
 get completed with status: ok (0)
 ```
