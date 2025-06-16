@@ -78,7 +78,7 @@ public protocol StreamingRequestClientCall: ClientCall {
   ///   - message: The message to send.
   ///   - compression: Whether compression should be used for this message. Ignored if compression
   ///     was not enabled for the RPC.
-  /// - Returns: A future which will be fullfilled when the message has been sent.
+  /// - Returns: A future which will be fulfilled when the message has been sent.
   func sendMessage(_ message: RequestPayload, compression: Compression) -> EventLoopFuture<Void>
 
   /// Sends a message to the service.
