@@ -30,8 +30,8 @@ message BoolValue {
 
 // The type of payload that should be returned.
 enum PayloadType {
-  // Compressable text format.
-  COMPRESSABLE = 0;
+  // Compressible text format.
+  COMPRESSIBLE = 0;
 }
 
 // A block of data, to simply increase gRPC message size.

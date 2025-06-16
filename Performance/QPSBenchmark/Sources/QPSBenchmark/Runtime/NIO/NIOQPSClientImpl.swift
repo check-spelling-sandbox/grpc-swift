@@ -135,9 +135,9 @@ final class NIOQPSClientImpl<RequestMakerType: NIORequestMaker>: NIOQPSClient {
         throw GRPCStatus(code: .invalidArgument, message: "Byte buffer not supported.")
       case let .simpleParams(simpleParams):
         var result = Grpc_Testing_SimpleRequest()
-        result.responseType = .compressable
+        result.responseType = .compressible
         result.responseSize = simpleParams.respSize
-        result.payload.type = .compressable
+        result.payload.type = .compressible
         let size = Int(simpleParams.reqSize)
         let body = Data(count: size)
         result.payload.body = body
@@ -151,9 +151,9 @@ final class NIOQPSClientImpl<RequestMakerType: NIORequestMaker>: NIOQPSClient {
     } else {
       // Default - simple proto without payloads.
       var result = Grpc_Testing_SimpleRequest()
-      result.responseType = .compressable
+      result.responseType = .compressible
       result.responseSize = 0
-      result.payload.type = .compressable
+      result.payload.type = .compressible
       return result
     }
   }

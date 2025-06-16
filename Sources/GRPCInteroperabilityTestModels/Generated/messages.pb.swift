@@ -40,24 +40,24 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 public enum Grpc_Testing_PayloadType: SwiftProtobuf.Enum {
   public typealias RawValue = Int
 
-  /// Compressable text format.
-  case compressable // = 0
+  /// Compressible text format.
+  case compressible // = 0
   case UNRECOGNIZED(Int)
 
   public init() {
-    self = .compressable
+    self = .compressible
   }
 
   public init?(rawValue: Int) {
     switch rawValue {
-    case 0: self = .compressable
+    case 0: self = .compressible
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
 
   public var rawValue: Int {
     switch self {
-    case .compressable: return 0
+    case .compressible: return 0
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -69,7 +69,7 @@ public enum Grpc_Testing_PayloadType: SwiftProtobuf.Enum {
 extension Grpc_Testing_PayloadType: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
   public static var allCases: [Grpc_Testing_PayloadType] = [
-    .compressable,
+    .compressible,
   ]
 }
 
@@ -98,7 +98,7 @@ public struct Grpc_Testing_Payload {
   // methods supported on all messages.
 
   /// The type of data in body.
-  public var type: Grpc_Testing_PayloadType = .compressable
+  public var type: Grpc_Testing_PayloadType = .compressible
 
   /// Primary contents of payload.
   public var body: Data = Data()
@@ -132,7 +132,7 @@ public struct Grpc_Testing_SimpleRequest {
 
   /// Desired payload type in the response from the server.
   /// If response_type is RANDOM, server randomly chooses one from other formats.
-  public var responseType: Grpc_Testing_PayloadType = .compressable
+  public var responseType: Grpc_Testing_PayloadType = .compressible
 
   /// Desired payload size in the response from the server.
   public var responseSize: Int32 = 0
@@ -320,7 +320,7 @@ public struct Grpc_Testing_StreamingOutputCallRequest {
   /// If response_type is RANDOM, the payload from each response in the stream
   /// might be of different types. This is to simulate a mixed type of payload
   /// stream.
-  public var responseType: Grpc_Testing_PayloadType = .compressable
+  public var responseType: Grpc_Testing_PayloadType = .compressible
 
   /// Configuration for each expected response message.
   public var responseParameters: [Grpc_Testing_ResponseParameters] = []
@@ -429,7 +429,7 @@ fileprivate let _protobuf_package = "grpc.testing"
 
 extension Grpc_Testing_PayloadType: SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "COMPRESSABLE"),
+    0: .same(proto: "COMPRESSIBLE"),
   ]
 }
 
@@ -486,7 +486,7 @@ extension Grpc_Testing_Payload: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.type != .compressable {
+    if self.type != .compressible {
       try visitor.visitSingularEnumField(value: self.type, fieldNumber: 1)
     }
     if !self.body.isEmpty {
@@ -578,7 +578,7 @@ extension Grpc_Testing_SimpleRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     // allocates stack space for every if/case branch local when no optimizations
     // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
     // https://github.com/apple/swift-protobuf/issues/1182
-    if self.responseType != .compressable {
+    if self.responseType != .compressible {
       try visitor.visitSingularEnumField(value: self.responseType, fieldNumber: 1)
     }
     if self.responseSize != 0 {
@@ -818,7 +818,7 @@ extension Grpc_Testing_StreamingOutputCallRequest: SwiftProtobuf.Message, SwiftP
     // allocates stack space for every if/case branch local when no optimizations
     // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
     // https://github.com/apple/swift-protobuf/issues/1182
-    if self.responseType != .compressable {
+    if self.responseType != .compressible {
       try visitor.visitSingularEnumField(value: self.responseType, fieldNumber: 1)
     }
     if !self.responseParameters.isEmpty {

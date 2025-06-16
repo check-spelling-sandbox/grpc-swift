@@ -99,8 +99,8 @@ final class NIOBenchmarkServiceImpl: Grpc_Testing_BenchmarkServiceProvider {
     type: Grpc_Testing_PayloadType,
     size: Int
   ) throws -> Grpc_Testing_Payload {
-    if type != .compressable {
-      // Making a payload which is not compressable is hard - and not implemented in
+    if type != .compressible {
+      // Making a payload which is not compressible is hard - and not implemented in
       // other implementations too.
       throw GRPCStatus(code: .internalError, message: "Failed to make payload")
     }
