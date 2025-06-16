@@ -919,7 +919,7 @@ internal final class ConnectionManager: @unchecked Sendable {
 
     case .idle, .transientFailure:
       // No connection or connection attempt exists but connection was marked as ready. This is
-      // strange. Ignore it in release mode as there's nothing to close and nowehere to fire an
+      // strange. Ignore it in release mode as there's nothing to close and nowhere to fire an
       // error to.
       assertionFailure("received initial HTTP/2 SETTINGS frame in \(self.state.label) state")
 
