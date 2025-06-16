@@ -49,7 +49,7 @@ public func waitAndAssertEqual<T: Equatable>(
   try assertEqual(try future.wait(), value, file: file, line: line)
 }
 
-/// Waits for the futures to be fulfilled and ssserts that their values are equal.
+/// Waits for the futures to be fulfilled and asserts that their values are equal.
 ///
 /// - Important: This should not be run on an event loop since this function calls `wait()` on the
 ///   given future.
