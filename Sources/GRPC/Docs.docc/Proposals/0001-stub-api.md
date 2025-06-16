@@ -167,7 +167,7 @@ public enum ServerResponse {
       // ...
     }
 
-    /// Conveneince API to create an successful response.
+    /// Conveneince API to create a successful response.
     public init(message: Message, metadata: Metadata = [:], trailingMetadata: Metadata = [:]) {
       // ...
     }
@@ -1047,7 +1047,7 @@ non-throwing and use `Result` types as their `Element`.
 ### Using `~Copyable` writers
 
 One appealing aspect of `~Copyable` types and ownership modifiers is that it's
-easy to represent an writer as a kind of state machine. Consider a writer passed
+easy to represent a writer as a kind of state machine. Consider a writer passed
 to a server handler, for example. Initially it may either send metadata or it
 may return a status as its first and only value. If it writes metadata it may
 then write messages. After any number of messages it may then write a final
