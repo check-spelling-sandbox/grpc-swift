@@ -250,7 +250,7 @@ extension Server {
   /// provided `configuration` and `EventLoopGroup`.
   ///
   /// - Important: The caller is responsible for ensuring the provided `configuration` may be used
-  ///   the the `group`.
+  ///   the `group`.
   public static func usingTLS(
     with configuration: GRPCTLSConfiguration,
     on group: EventLoopGroup

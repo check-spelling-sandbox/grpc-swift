@@ -81,7 +81,7 @@ public struct GRPCAsyncUnaryCall<Request: Sendable, Response: Sendable>: Sendabl
     }
   }
 
-  /// The final status of the the RPC.
+  /// The final status of the RPC.
   ///
   /// - Important: Awaiting this property will suspend until the responses have been consumed.
   public var status: GRPCStatus {

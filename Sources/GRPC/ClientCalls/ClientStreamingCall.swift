@@ -73,7 +73,7 @@ public struct ClientStreamingCall<RequestPayload, ResponsePayload>: StreamingReq
     return self.responseParts.trailingMetadata
   }
 
-  /// The final status of the the RPC.
+  /// The final status of the RPC.
   public var status: EventLoopFuture<GRPCStatus> {
     return self.responseParts.status
   }

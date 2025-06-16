@@ -19,7 +19,7 @@ set -eu
 # This script bundles up the gRPC and Protobuf protoc plugins into a zip file
 # suitable for the 'gRPC-Swift-Plugins' CocoaPod.
 #
-# The contents of thie zip should look like this:
+# The contents of the zip should look like this:
 #
 #   ├── LICENSE
 #   └── bin

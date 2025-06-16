@@ -34,7 +34,7 @@ import NIOCore
 /// Response parts, or errors, received from the transport fill be fired in the inbound direction
 /// back through the interceptor pipeline via ``receive(_:context:)-5v1ih`` and ``errorCaught(_:context:)-6pncp``,
 /// respectively. Note that the `end` response part and any error received are terminal: the
-/// pipeline will be torn down once these parts reach the the tail and are a signal that the
+/// pipeline will be torn down once these parts reach the tail and are a signal that the
 /// interceptor should free up any resources it may be using.
 ///
 /// Each of the interceptor functions is provided with a `context` which exposes analogous functions
