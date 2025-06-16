@@ -36,7 +36,7 @@ final class IsConnectingDelegate: GRPCConnectionPoolDelegate {
   func startedConnecting(id: GRPCConnectionID) {
     let didStartConnecting: Bool = self.lock.withLock {
       let (inserted, _) = self.connecting.insert(id)
-      // Only intereseted new connection attempts when there are no active connections.
+      // Only interested new connection attempts when there are no active connections.
       return inserted && self.connecting.count == 1 && self.active.isEmpty
     }
 
