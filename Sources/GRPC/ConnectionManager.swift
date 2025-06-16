@@ -664,7 +664,7 @@ internal final class ConnectionManager: @unchecked Sendable {
   /// Registers a callback which fires when the current active connection is closed.
   ///
   /// If there is a connection, the callback will be invoked with `true` when the connection is
-  /// closed. Otherwise the callback is invoked with `false`.
+  /// closed. Otherwise, the callback is invoked with `false`.
   internal func onCurrentConnectionClose(_ onClose: @escaping (Bool) -> Void) {
     if self.eventLoop.inEventLoop {
       self._onCurrentConnectionClose(onClose)
