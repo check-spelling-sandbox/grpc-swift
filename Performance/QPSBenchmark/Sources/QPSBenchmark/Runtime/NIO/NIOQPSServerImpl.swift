@@ -96,7 +96,7 @@ final class NIOQPSServerImpl: NIOQPSServer {
     }.recover { error in
       self.logger.error("Error closing server", metadata: ["error": "\(error)"])
       // May as well plough on anyway -
-      // we will hopefully sort outselves out shutting down the eventloops
+      // we will hopefully sort ourselves out shutting down the eventloops
       return ()
     }.hop(to: callbackLoop).flatMap { _ in
       let promise: EventLoopPromise<Void> = callbackLoop.makePromise()

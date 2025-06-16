@@ -95,7 +95,7 @@ final class AsyncQPSServerImpl: AsyncQPSServer {
     } catch {
       self.logger.error("Error closing server", metadata: ["error": "\(error)"])
       // May as well plough on anyway -
-      // we will hopefully sort outselves out shutting down the eventloops
+      // we will hopefully sort ourselves out shutting down the eventloops
     }
     try await self.eventLoopGroup.shutdownGracefully()
   }
