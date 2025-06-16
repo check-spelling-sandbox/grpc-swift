@@ -54,7 +54,7 @@ class EmptyUnary: InteroperabilityTest {
 /// Procedure:
 /// 1. Client calls CacheableUnaryCall with SimpleRequest request with payload set to current
 ///    timestamp. Timestamp format is irrelevant, and resolution is in nanoseconds. Client adds a
-///    x-user-ip header with value 1.2.3.4 to the request. This is done since some proxys such as
+///    x-user-ip header with value 1.2.3.4 to the request. This is done since some proxies such as
 ///    GFE will not cache requests from localhost. Client marks the request as cacheable by
 ///    setting the cacheable flag in the request context. Longer term this should be driven by
 ///    the method option specified in the proto file itself.
