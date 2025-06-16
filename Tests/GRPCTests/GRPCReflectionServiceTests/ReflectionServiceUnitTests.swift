@@ -32,7 +32,7 @@ final class ReflectionServiceUnitTests: GRPCTestCase {
     let registryFileDescriptorData = registry.fileDescriptorDataByFilename
 
     for (fileName, protoData) in registryFileDescriptorData {
-      let serializedFiledescriptorData = protoData.serializedFileDescriptorProto
+      let serializedFileDescriptorData = protoData.serializedFileDescriptorProto
       let dependencyFileNames = protoData.dependencyFileNames
 
       guard let index = protos.firstIndex(where: { $0.name == fileName }) else {
@@ -46,7 +46,7 @@ final class ReflectionServiceUnitTests: GRPCTestCase {
 
       let originalProto = protos[index]
       XCTAssertEqual(originalProto.name, fileName)
-      XCTAssertEqual(try originalProto.serializedData(), serializedFiledescriptorData)
+      XCTAssertEqual(try originalProto.serializedData(), serializedFileDescriptorData)
       XCTAssertEqual(originalProto.dependency, dependencyFileNames)
 
       protos.remove(at: index)
