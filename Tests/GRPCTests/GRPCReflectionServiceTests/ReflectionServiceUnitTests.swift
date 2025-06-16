@@ -235,7 +235,7 @@ final class ReflectionServiceUnitTests: GRPCTestCase {
       let fileDescriptorProtos = try serializedFileDescriptorProtos.map {
         try Google_Protobuf_FileDescriptorProto(serializedBytes: $0)
       }
-      // Tests that the functions returns all the tranzitive dependencies, with their services and
+      // Tests that the functions returns all the transitive dependencies, with their services and
       // methods, together with the initial proto, as serialized data.
       XCTAssertEqual(fileDescriptorProtos.count, 21)
       for fileDescriptorProto in fileDescriptorProtos {
