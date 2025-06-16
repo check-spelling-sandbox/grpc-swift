@@ -218,7 +218,7 @@ final class ReflectionServiceUnitTests: GRPCTestCase {
       XCTAssert(protos.isEmpty)
     case .failure(let status):
       XCTFail(
-        "Faild with GRPCStatus code: " + String(status.code.rawValue) + " and message: "
+        "Failed with GRPCStatus code: " + String(status.code.rawValue) + " and message: "
           + (status.message ?? "empty") + "."
       )
     }
@@ -273,7 +273,7 @@ final class ReflectionServiceUnitTests: GRPCTestCase {
       XCTAssert(protos.isEmpty)
     case .failure(let status):
       XCTFail(
-        "Faild with GRPCStatus code: " + String(status.code.rawValue) + " and message: "
+        "Failed with GRPCStatus code: " + String(status.code.rawValue) + " and message: "
           + (status.message ?? "empty") + "."
       )
     }
@@ -331,7 +331,7 @@ final class ReflectionServiceUnitTests: GRPCTestCase {
       XCTAssert(protos.isEmpty)
     case .failure(let status):
       XCTFail(
-        "Faild with GRPCStatus code: " + String(status.code.rawValue) + " and message: "
+        "Failed with GRPCStatus code: " + String(status.code.rawValue) + " and message: "
           + (status.message ?? "empty") + "."
       )
     }
