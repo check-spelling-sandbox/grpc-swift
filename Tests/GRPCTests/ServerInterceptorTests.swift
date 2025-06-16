@@ -380,8 +380,8 @@ private class Codec: ChannelDuplexHandler {
       context.write(self.wrapOutboundOut(.metadata(headers)), promise: promise)
 
     case let .message(message, metadata):
-      let deserialzed = try! self.deserializer.deserialize(byteBuffer: message)
-      context.write(self.wrapOutboundOut(.message(deserialzed, metadata)), promise: promise)
+      let deserialized = try! self.deserializer.deserialize(byteBuffer: message)
+      context.write(self.wrapOutboundOut(.message(deserialized, metadata)), promise: promise)
 
     case let .end(status, trailers):
       context.write(self.wrapOutboundOut(.end(status, trailers)), promise: promise)
