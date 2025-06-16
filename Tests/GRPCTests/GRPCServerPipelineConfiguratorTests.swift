@@ -262,7 +262,7 @@ class GRPCServerPipelineConfiguratorTests: GRPCTestCase {
     self.assertConfigurator(isPresent: true)
     self.assertHTTP2Handler(isPresent: false)
 
-    // Complete the handshake with no protocol negotiated, we should fallback to the buffered bytes.
+    // Complete the handshake with no protocol negotiated, we should fall back to the buffered bytes.
     let event = TLSUserEvent.handshakeCompleted(negotiatedProtocol: nil)
     self.channel.pipeline.fireUserInboundEventTriggered(event)
 

@@ -131,7 +131,7 @@ internal struct PoolManagerStateMachine {
         }) {
           connectionPoolIndex = index
         } else {
-          // Nothing on the preferred event loop; fallback to the pool with the most available
+          // Nothing on the preferred event loop; fall back to the pool with the most available
           // streams.
           connectionPoolIndex = active.reserveStreamFromPoolWithMostAvailableStreams()
         }
