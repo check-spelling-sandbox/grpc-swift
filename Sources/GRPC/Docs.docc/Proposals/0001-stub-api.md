@@ -8,7 +8,7 @@
   - v1 (25/09/23):
     - Adds type-erased wrappers for `AsyncSequence` and `Writer`.
     - Renames `BindableService` to `RPCService`
-    - Add `AsyncSequence` conveneince API to `Writer`
+    - Add `AsyncSequence` convenience API to `Writer`
     - Add note about possible workaround for clients returning responses
 
 ## Introduction
@@ -167,12 +167,12 @@ public enum ServerResponse {
       // ...
     }
 
-    /// Conveneince API to create a successful response.
+    /// Convenience API to create a successful response.
     public init(message: Message, metadata: Metadata = [:], trailingMetadata: Metadata = [:]) {
       // ...
     }
 
-    /// Conveneince API to create an unsuccessful response.
+    /// Convenience API to create an unsuccessful response.
     public init(error: RPCError) {
       // ...
     }
@@ -217,12 +217,12 @@ public enum ServerResponse {
       // ...
     }
 
-    /// Conveneince API to create an accepted response.
+    /// Convenience API to create an accepted response.
     public init(metadata: Metadata = [:], producer: @escaping Producer) {
       // ...
     }
 
-    /// Conveneince API to create an unsuccessful response.
+    /// Convenience API to create an unsuccessful response.
     public init(error: RPCError) {
       // ...
     }
@@ -254,7 +254,7 @@ public enum ClientResponse {
       // ...
     }
 
-    // Note: it's possible to provide a number of conveneince APIs on top:
+    // Note: it's possible to provide a number of convenience APIs on top:
 
     /// The metadata received from server at the start of the RPC.
     ///
@@ -311,7 +311,7 @@ public enum ClientResponse {
       // ...
     }
 
-    // Note: it's possible to provide a number of conveneince APIs on top:
+    // Note: it's possible to provide a number of convenience APIs on top:
 
     /// The metadata received from server at the start of the RPC.
     ///
