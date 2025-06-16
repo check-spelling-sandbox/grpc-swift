@@ -232,7 +232,7 @@ public enum PlatformSupport {
   /// Makes a new client bootstrap using the given `EventLoopGroup`.
   ///
   /// If the `EventLoopGroup` is a `NIOTSEventLoopGroup` then the returned bootstrap will be a
-  /// `NIOTSConnectionBootstrap`, otherwise it will be a `ClientBootstrap`.
+  /// `NIOTSConnectionBootstrap`; otherwise, it will be a `ClientBootstrap`.
   ///
   /// - Parameter group: The `EventLoopGroup` to use.
   public static func makeClientBootstrap(
@@ -292,7 +292,7 @@ public enum PlatformSupport {
   /// Makes a new server bootstrap using the given `EventLoopGroup`.
   ///
   /// If the `EventLoopGroup` is a `NIOTSEventLoopGroup` then the returned bootstrap will be a
-  /// `NIOTSListenerBootstrap`, otherwise it will be a `ServerBootstrap`.
+  /// `NIOTSListenerBootstrap`; otherwise, it will be a `ServerBootstrap`.
   ///
   /// - Parameter group: The `EventLoopGroup` to use.
   public static func makeServerBootstrap(

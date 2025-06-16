@@ -837,7 +837,7 @@ extension ConnectionManagerTests {
     // Channel should now be ready.
     XCTAssertNoThrow(try readyChannelMux.wait())
 
-    // Kill the first channel. But first ensure there's an active RPC, otherwise we'll idle.
+    // Kill the first channel. But first ensure there's an active RPC; otherwise, we'll idle.
     let streamCreated = NIOHTTP2StreamCreatedEvent(
       streamID: 1,
       localInitialWindowSize: nil,
