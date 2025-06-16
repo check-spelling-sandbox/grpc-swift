@@ -246,7 +246,7 @@ message LoadBalancerStatsResponse {
   int32 num_failures = 2;
   map<string, RpcsByPeer> rpcs_by_method = 3;
   // All the metadata of all RPCs for each peer.
-  map<string, MetadataByPeer> metadatas_by_peer = 4;
+  map<string, MetadataByPeer> metadata_by_peer = 4;
 }
 
 // Request for retrieving a test client's accumulated stats.
