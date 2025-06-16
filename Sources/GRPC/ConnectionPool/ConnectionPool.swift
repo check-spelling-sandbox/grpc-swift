@@ -754,7 +754,7 @@ extension ConnectionPool: ConnectionManagerConnectivityDelegate {
     self._connections.values[index].isQuiescing = true
     self.delegate?.connectionQuiescing(id: .init(manager.id))
 
-    // As the connection is quescing, we need to know when the current connection its managing has
+    // As the connection is quiescing, we need to know when the current connection its managing has
     // closed. When that happens drop the H2 delegate and update the pool delegate.
     manager.onCurrentConnectionClose { hadActiveConnection in
       assert(hadActiveConnection)
