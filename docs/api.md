@@ -61,7 +61,7 @@ generated types with `public` methods and properties is acceptable if:
 
 - The extension uses a type you own, either as a return type or as a non-default
   argument.
-- The extension is prefixed with a name which will avoid avoid ambiguity (such
+- The extension is prefixed with a name which will avoid ambiguity (such
   as the name of your module).
 
 **Examples**
