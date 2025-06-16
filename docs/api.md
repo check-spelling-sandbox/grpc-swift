@@ -117,10 +117,10 @@ supported.
 
 - We **might** add a new type called `GRPCChannelPool`
 - We **might** add a new module called `GRPCTestKit`
-- We **might** add a new gloabl function called `gRPCRun`
+- We **might** add a new global function called `gRPCRun`
 - We **will not** add a new type called `ChannelPool`
 - We **will not** add a new module called `TestKit`
-- We **will not** add a new gloabl function called `run`
+- We **will not** add a new global function called `run`
 
 ## Generated Code
 
