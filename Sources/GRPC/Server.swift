@@ -527,7 +527,7 @@ extension Server.Configuration {
     /// Sets the headers which are permitted in a response to a CORS request.
     public var allowedHeaders: [String]
     /// Enabling this value allows sets the "access-control-allow-credentials" header field
-    /// to "true" in respones to CORS requests. This must be enabled if the client intends to send
+    /// to "true" in responses to CORS requests. This must be enabled if the client intends to send
     /// credentials.
     public var allowCredentialedRequests: Bool
     /// The maximum age in seconds which pre-flight CORS requests may be cached for.
