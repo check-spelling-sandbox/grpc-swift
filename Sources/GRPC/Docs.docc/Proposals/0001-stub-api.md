@@ -690,7 +690,7 @@ extension EchoClientProtocol {
   }
 }
 
-// Note: a concerete client implementation would also be generated. The details
+// Note: a concrete client implementation would also be generated. The details
 // aren't interesting here.
 ```
 
