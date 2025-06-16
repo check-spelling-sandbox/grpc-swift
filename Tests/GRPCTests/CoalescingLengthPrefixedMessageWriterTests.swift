@@ -45,7 +45,7 @@ internal final class CoalescingLengthPrefixedMessageWriterTests: GRPCTestCase {
       XCTAssertEqual(buffer.readableBytes, 0)
     }
 
-    // No more bufers.
+    // No more buffers.
     XCTAssertNil(writer.next())
 
     if withPromise {
@@ -82,7 +82,7 @@ internal final class CoalescingLengthPrefixedMessageWriterTests: GRPCTestCase {
       XCTAssertEqual(buffer.readableBytes, 0)
     }
 
-    // No more bufers.
+    // No more buffers.
     XCTAssertNil(writer.next())
 
     if withPromise {
