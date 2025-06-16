@@ -209,7 +209,7 @@ $ grpcurl -d '{ "text": "test" }' -plaintext localhost:1234 echo.Echo.Get
 }
 ```
 
-Note that when specifying a service, a method or a symbol, we have to use the fully qualified names:
+Note that when specifying a service, a method, or a symbol, we have to use the fully qualified names:
 - service: \<package\>.\<service\>
 - method: \<package\>.\<service\>.\<method\>
 - type: \<package\>.\<type\>
