@@ -758,7 +758,7 @@ internal final class ConnectionManager: @unchecked Sendable {
     case let .connecting(connecting):
       let connected = ConnectedState(from: connecting, candidate: channel, multiplexer: multiplexer)
       self.state = .active(connected)
-      // Optimistic connections are happy this this level of setup.
+      // Optimistic connections are happy with this level of setup.
       connecting.candidateMuxPromise.succeed(multiplexer)
 
     // Application called shutdown before the channel become active; we should close it.
