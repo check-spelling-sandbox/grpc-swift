@@ -29,7 +29,7 @@ import NIOCore
 /// These events flow through a pipeline of interceptors for each RPC. Request parts sent from the
 /// call object (e.g. ``UnaryCall``, ``BidirectionalStreamingCall``) will traverse the pipeline in the
 /// outbound direction from its tail via ``send(_:promise:context:)-4igtj`` eventually reaching the head of the
-/// pipeline where it will be sent sent to the server.
+/// pipeline where it will be sent to the server.
 ///
 /// Response parts, or errors, received from the transport fill be fired in the inbound direction
 /// back through the interceptor pipeline via ``receive(_:context:)-5v1ih`` and ``errorCaught(_:context:)-6pncp``,
