@@ -63,38 +63,38 @@ class ImmediatelyFailingProviderTests: EchoTestCaseBase {
   }
 
   func testUnary() throws {
-    let expcectation = self.makeStatusExpectation()
+    let expectation = self.makeStatusExpectation()
     let call = self.client.get(Echo_EchoRequest(text: "foo"))
-    call.status.map { $0.code }.assertEqual(.unavailable, fulfill: expcectation)
+    call.status.map { $0.code }.assertEqual(.unavailable, fulfill: expectation)
 
-    self.wait(for: [expcectation], timeout: self.defaultTestTimeout)
+    self.wait(for: [expectation], timeout: self.defaultTestTimeout)
   }
 
   func testServerStreaming() throws {
-    let expcectation = self.makeStatusExpectation()
+    let expectation = self.makeStatusExpectation()
     let call = self.client.expand(Echo_EchoRequest(text: "foo")) { response in
       XCTFail("unexpected response: \(response)")
     }
 
-    call.status.map { $0.code }.assertEqual(.unavailable, fulfill: expcectation)
-    self.wait(for: [expcectation], timeout: self.defaultTestTimeout)
+    call.status.map { $0.code }.assertEqual(.unavailable, fulfill: expectation)
+    self.wait(for: [expectation], timeout: self.defaultTestTimeout)
   }
 
   func testClientStreaming() throws {
-    let expcectation = self.makeStatusExpectation()
+    let expectation = self.makeStatusExpectation()
     let call = self.client.collect()
 
-    call.status.map { $0.code }.assertEqual(.unavailable, fulfill: expcectation)
-    self.wait(for: [expcectation], timeout: self.defaultTestTimeout)
+    call.status.map { $0.code }.assertEqual(.unavailable, fulfill: expectation)
+    self.wait(for: [expectation], timeout: self.defaultTestTimeout)
   }
 
   func testBidirectionalStreaming() throws {
-    let expcectation = self.makeStatusExpectation()
+    let expectation = self.makeStatusExpectation()
     let call = self.client.update { response in
       XCTFail("unexpected response: \(response)")
     }
 
-    call.status.map { $0.code }.assertEqual(.unavailable, fulfill: expcectation)
-    self.wait(for: [expcectation], timeout: self.defaultTestTimeout)
+    call.status.map { $0.code }.assertEqual(.unavailable, fulfill: expectation)
+    self.wait(for: [expectation], timeout: self.defaultTestTimeout)
   }
 }
