@@ -42,7 +42,7 @@ extension EventLoopFuture where Value: Equatable {
 
       case let .failure(error):
         // swiftformat:disable:next redundantParens
-        XCTFail("Expecteded '\(expected)' but received error: \(error)", file: (file), line: line)
+        XCTFail("Expected '\(expected)' but received error: \(error)", file: (file), line: line)
       }
     }
   }
