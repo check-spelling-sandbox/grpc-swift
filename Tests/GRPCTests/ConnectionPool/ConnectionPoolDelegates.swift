@@ -22,14 +22,14 @@ final class IsConnectingDelegate: GRPCConnectionPoolDelegate {
   private var connecting = Set<GRPCConnectionID>()
   private var active = Set<GRPCConnectionID>()
 
-  enum StateNotifacation: Hashable, Sendable {
+  enum StateNotification: Hashable, Sendable {
     case connecting
     case connected
   }
 
-  private let onStateChange: @Sendable (StateNotifacation) -> Void
+  private let onStateChange: @Sendable (StateNotification) -> Void
 
-  init(onStateChange: @escaping @Sendable (StateNotifacation) -> Void) {
+  init(onStateChange: @escaping @Sendable (StateNotification) -> Void) {
     self.onStateChange = onStateChange
   }
 
