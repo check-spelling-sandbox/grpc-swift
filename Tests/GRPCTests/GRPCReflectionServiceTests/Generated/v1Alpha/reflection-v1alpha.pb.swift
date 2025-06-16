@@ -199,7 +199,7 @@ struct Grpc_Reflection_V1alpha_ServerReflectionResponse: Sendable {
     set {messageResponse = .fileDescriptorResponse(newValue)}
   }
 
-  /// This message is used to answer all_extension_numbers_of_type requst.
+  /// This message is used to answer all_extension_numbers_of_type request.
   var allExtensionNumbersResponse: Grpc_Reflection_V1alpha_ExtensionNumberResponse {
     get {
       if case .allExtensionNumbersResponse(let v)? = messageResponse {return v}
@@ -238,7 +238,7 @@ struct Grpc_Reflection_V1alpha_ServerReflectionResponse: Sendable {
     /// The reflection service is allowed to avoid sending FileDescriptorProtos
     /// that were previously sent in response to earlier requests in the stream.
     case fileDescriptorResponse(Grpc_Reflection_V1alpha_FileDescriptorResponse)
-    /// This message is used to answer all_extension_numbers_of_type requst.
+    /// This message is used to answer all_extension_numbers_of_type request.
     case allExtensionNumbersResponse(Grpc_Reflection_V1alpha_ExtensionNumberResponse)
     /// This message is used to answer list_services request.
     case listServicesResponse(Grpc_Reflection_V1alpha_ListServiceResponse)
