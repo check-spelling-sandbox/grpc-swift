@@ -564,7 +564,7 @@ struct EchoService: EchoServiceProtocol {
       $0.append($1)
     }.join(separator: " ")
 
-    // Responsd with the joined message. Unlike 'get', we also echo back the
+    // Respond with the joined message. Unlike 'get', we also echo back the
     // request metadata as the leading and trailing metadata.
     return ServerResponse.Single(
       message: EchoResponse(text: "echo: \(joined)")
