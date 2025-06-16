@@ -834,7 +834,7 @@ extension GRPCClientStateMachineTests {
   func testSendRequestHeadersNormalizesCustomMetadata() throws {
     // `HPACKHeaders` uses case-insensitive lookup for header names so we can't check the equality
     // for individual headers. We'll pull out the entries we care about by matching a sentinel value
-    // and then compare `HPACKHeaders` instances (since the equality check *is* case sensitive).
+    // and then compare `HPACKHeaders` instances (since the equality check *is* case-sensitive).
     let filterKey = "a-key-for-filtering"
     let customMetadata: HPACKHeaders = [
       "partiallyLower": filterKey,
