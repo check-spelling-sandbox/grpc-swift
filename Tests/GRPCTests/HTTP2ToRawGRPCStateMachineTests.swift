@@ -159,7 +159,7 @@ class HTTP2ToRawGRPCStateMachineTests: GRPCTestCase {
     return machine
   }
 
-  /// Makes a gRPC framed message; i.e. a compression flag (UInt8), the message length (UIn32), the
+  /// Makes a gRPC framed message; i.e. a compression flag (UInt8), the message length (UInt32), the
   /// message bytes (UInt8 ⨉ message length).
   private func makeLengthPrefixedBytes(_ count: Int, setCompressFlag: Bool = false) -> ByteBuffer {
     var buffer = ByteBuffer()
