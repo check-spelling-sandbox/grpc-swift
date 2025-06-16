@@ -65,7 +65,7 @@ let packageDependencies: [Package.Dependency] = [
   .package(
     url: "https://github.com/apple/swift-argument-parser.git",
     // Version is greater than in other Package@swift manifests: 1.1.0 raised the minimum Swift
-    // version and indluded async support.
+    // version and included async support.
     from: "1.1.1"
   ),
 ].appending(
