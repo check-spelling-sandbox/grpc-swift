@@ -264,7 +264,7 @@ extension HTTP2ToRawGRPCStateMachine.State {
       return self.unsupportedContentType()
     }
 
-    // Now extract the request message encoding and setup an appropriate message reader.
+    // Now extract the request message encoding and set up an appropriate message reader.
     // We may send back a list of acceptable request message encodings as well.
     let reader: LengthPrefixedMessageReader
     let acceptableRequestEncoding: String?

@@ -81,7 +81,7 @@ final class NIOPingPongRequestMaker: NIORequestMaker {
       }
     }
 
-    // Setup the call.
+    // Set up the call.
     streamingCall = self.client.streamingCall(handler: handleResponse)
     // Kick start with initial request
     streamingCall!.sendMessage(self.requestMessage, promise: nil)

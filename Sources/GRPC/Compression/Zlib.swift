@@ -272,7 +272,7 @@ enum Zlib {
       }
 
       return try input.readWithUnsafeMutableReadableBytes { inputPointer -> (Int, Int) in
-        // Setup the input buffer.
+        // Set up the input buffer.
         self.stream.availableInputBytes = inputPointer.count
         self.stream.nextInputBuffer = CGRPCZlib_castVoidToBytefPointer(inputPointer.baseAddress!)
 

@@ -42,7 +42,7 @@ class GRPCClientKeepaliveTests: GRPCTestCase {
       XCTAssertNoThrow(try group.syncShutdownGracefully())
     }
 
-    // Setup a server.
+    // Set up a server.
     let server = try Server.insecure(group: group)
       .withServiceProviders([EchoProvider()])
       .withLogger(self.serverLogger)
@@ -52,8 +52,8 @@ class GRPCClientKeepaliveTests: GRPCTestCase {
       XCTAssertNoThrow(try server.close().wait())
     }
 
-    // Setup a connection. We'll add a handler to drop all reads, this is somewhat equivalent to
-    // simulating bad network conditions and allows us to setup a connection and have our keepalive
+    // Set up a connection. We'll add a handler to drop all reads, this is somewhat equivalent to
+    // simulating bad network conditions and allows us to set up a connection and have our keepalive
     // timeout expire.
     let connection = ClientConnection.insecure(group: group)
       .withBackgroundActivityLogger(self.clientLogger)

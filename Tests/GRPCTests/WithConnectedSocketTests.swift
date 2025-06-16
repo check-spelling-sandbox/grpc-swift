@@ -29,7 +29,7 @@ class WithConnectedSockettests: GRPCTestCase {
     }
 
     let path = "/tmp/grpc-\(getpid()).sock"
-    // Setup a server.
+    // Set up a server.
     let server = try Server.insecure(group: group)
       .withServiceProviders([EchoProvider()])
       .withLogger(self.serverLogger)

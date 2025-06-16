@@ -392,7 +392,7 @@ internal final class ConnectionManager: @unchecked Sendable {
     http2Delegate: ConnectionManagerHTTP2Delegate?,
     logger: Logger
   ) {
-    // Setup the logger.
+    // Set up the logger.
     var logger = logger
     let connectionID = ConnectionManagerID()
     let channelNumber: UInt64 = 0

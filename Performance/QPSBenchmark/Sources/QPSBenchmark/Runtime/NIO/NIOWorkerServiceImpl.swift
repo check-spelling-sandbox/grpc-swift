@@ -111,7 +111,7 @@ class NIOWorkerServiceImpl: Grpc_Testing_WorkerServiceProvider {
     }
   }
 
-  /// Handle a request to setup a server.
+  /// Handle a request to set up a server.
   /// Makes a new server and sets it running.
   private func handleServerSetup(
     context: StreamingResponseCallContext<Grpc_Testing_ServerStatus>,
@@ -235,7 +235,7 @@ class NIOWorkerServiceImpl: Grpc_Testing_WorkerServiceProvider {
     }
   }
 
-  /// Setup a client as described by the message from the driver.
+  /// Set up a client as described by the message from the driver.
   private func handleClientSetup(
     context: StreamingResponseCallContext<Grpc_Testing_ClientStatus>,
     config: Grpc_Testing_ClientConfig

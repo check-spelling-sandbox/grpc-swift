@@ -55,7 +55,7 @@ class MutualTLSTests: GRPCTestCase {
     expectServerHandshakeError: Bool,
     expectedClientError: ExpectedClientError?
   ) throws {
-    // Setup the server.
+    // Set up the server.
     var serverConfiguration = Server.Configuration.default(
       target: .hostAndPort("localhost", 0),
       eventLoopGroup: self.serverEventLoopGroup,
@@ -73,7 +73,7 @@ class MutualTLSTests: GRPCTestCase {
 
     let port = self.server!.channel.localAddress!.port!
 
-    // Setup the client.
+    // Set up the client.
     var clientConfiguration = ClientConnection.Configuration.default(
       target: .hostAndPort("localhost", port),
       eventLoopGroup: self.clientEventLoopGroup

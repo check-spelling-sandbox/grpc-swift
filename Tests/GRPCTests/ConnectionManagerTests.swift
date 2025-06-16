@@ -153,7 +153,7 @@ extension ConnectionManagerTests {
       self.loop.run()
     }
 
-    // Setup the real channel and activate it.
+    // Set up the real channel and activate it.
     let channel = EmbeddedChannel(loop: self.loop)
     let h2mux = HTTP2StreamMultiplexer(
       mode: .client,
@@ -206,7 +206,7 @@ extension ConnectionManagerTests {
         return readyChannelMux
       }
 
-    // Setup the channel.
+    // Set up the channel.
     let channel = EmbeddedChannel(loop: self.loop)
     let h2mux = HTTP2StreamMultiplexer(
       mode: .client,
@@ -312,7 +312,7 @@ extension ConnectionManagerTests {
       self.loop.run()
     }
 
-    // Setup the channel.
+    // Set up the channel.
     let channel1 = channels.removeLast()
     let channel1Promise = channelPromises.removeLast()
 
@@ -384,7 +384,7 @@ extension ConnectionManagerTests {
         return readyChannelMux
       }
 
-    // Setup the channel.
+    // Set up the channel.
     let channel = EmbeddedChannel(loop: self.loop)
     let h2mux = HTTP2StreamMultiplexer(
       mode: .client,
@@ -458,7 +458,7 @@ extension ConnectionManagerTests {
         return readyChannelMux
       }
 
-    // Setup the channel.
+    // Set up the channel.
     let channel = EmbeddedChannel(loop: self.loop)
     let h2mux = HTTP2StreamMultiplexer(
       mode: .client,
@@ -531,7 +531,7 @@ extension ConnectionManagerTests {
       self.loop.advanceTime(by: .seconds(1))
     }
 
-    // Setup the actual channel and complete the promise.
+    // Set up the actual channel and complete the promise.
     let channel = EmbeddedChannel(loop: self.loop)
     let h2mux = HTTP2StreamMultiplexer(
       mode: .client,
@@ -905,7 +905,7 @@ extension ConnectionManagerTests {
         return readyChannelMux
       }
 
-    // Setup the channel.
+    // Set up the channel.
     let channel = EmbeddedChannel(loop: self.loop)
     let h2mux = HTTP2StreamMultiplexer(
       mode: .client,
@@ -1063,7 +1063,7 @@ extension ConnectionManagerTests {
       return readyChannelMux
     }
 
-    // Setup the real channel and activate it.
+    // Set up the real channel and activate it.
     let channel = EmbeddedChannel(loop: self.loop)
     let h2mux = HTTP2StreamMultiplexer(
       mode: .client,
@@ -1121,7 +1121,7 @@ extension ConnectionManagerTests {
       return readyChannelMux
     }
 
-    // Setup the actual channel and activate it.
+    // Set up the actual channel and activate it.
     let channel = EmbeddedChannel(loop: self.loop)
     let h2mux = HTTP2StreamMultiplexer(
       mode: .client,
@@ -1391,7 +1391,7 @@ extension ConnectionManagerTests {
   }
 
   func testConnectTimeoutIsRespectedWithNoRetries() {
-    // Setup a factory which makes channels. We'll use this as the point to check that the
+    // Set up a factory which makes channels. We'll use this as the point to check that the
     // connect timeout is as expected.
     struct Provider: ConnectionManagerChannelProvider {
       func makeChannel(
@@ -1419,7 +1419,7 @@ extension ConnectionManagerTests {
       logger: self.logger
     )
 
-    // Setup the state change expectations and trigger them by asking for the multiplexer.
+    // Set up the state change expectations and trigger them by asking for the multiplexer.
     // We expect connecting to shutdown as no connect retries are configured and the factory
     // always returns errors.
     let multiplexer = self.waitForStateChanges([

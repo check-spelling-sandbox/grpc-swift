@@ -42,7 +42,7 @@ class GRPCIdleTests: GRPCTestCase {
       XCTAssertNoThrow(try group.syncShutdownGracefully())
     }
 
-    // Setup a server.
+    // Set up a server.
     let server = try Server.insecure(group: group)
       .withServiceProviders([EchoProvider()])
       .withConnectionIdleTimeout(serverIdle)
@@ -53,7 +53,7 @@ class GRPCIdleTests: GRPCTestCase {
       XCTAssertNoThrow(try server.close().wait())
     }
 
-    // Setup a state change recorder for the client.
+    // Set up a state change recorder for the client.
     let stateRecorder = RecordingConnectivityDelegate()
     stateRecorder.expectChanges(3) { changes in
       XCTAssertEqual(
@@ -66,7 +66,7 @@ class GRPCIdleTests: GRPCTestCase {
       )
     }
 
-    // Setup a connection.
+    // Set up a connection.
     let connection = ClientConnection.insecure(group: group)
       .withConnectivityStateDelegate(stateRecorder)
       .withConnectionIdleTimeout(clientIdle)

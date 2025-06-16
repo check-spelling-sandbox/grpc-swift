@@ -284,7 +284,7 @@ extension ClientTransportTests {
   }
 
   func testErrorWhenActive() throws {
-    // Setup the transport, we only expect an error back.
+    // Set up the transport, we only expect an error back.
     self.setUpTransport(onError: { error in
       assertThat(error, .is(.instanceOf(DummyError.self)))
     })

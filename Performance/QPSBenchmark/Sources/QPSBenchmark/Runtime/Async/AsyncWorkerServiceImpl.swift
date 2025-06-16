@@ -123,7 +123,7 @@ actor AsyncWorkerServiceImpl: Grpc_Testing_WorkerServiceAsyncProvider {
     }
   }
 
-  /// Handle a request to setup a server.
+  /// Handle a request to set up a server.
   /// Makes a new server and sets it running.
   private func handleServerSetup(
     context: GRPCAsyncServerCallContext,
@@ -254,7 +254,7 @@ actor AsyncWorkerServiceImpl: Grpc_Testing_WorkerServiceAsyncProvider {
     }
   }
 
-  /// Setup a client as described by the message from the driver.
+  /// Set up a client as described by the message from the driver.
   private func handleClientSetup(
     context: GRPCAsyncServerCallContext,
     config: Grpc_Testing_ClientConfig,

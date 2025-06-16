@@ -163,7 +163,7 @@ In the same directory, open
 
 ```swift
 func run() async throws {
-    // Setup an `EventLoopGroup` for the connection to run on.
+    // Set up an `EventLoopGroup` for the connection to run on.
     //
     // See: https://github.com/apple/swift-nio#eventloops-and-eventloopgroups
     let group = MultiThreadedEventLoopGroup(numberOfThreads: 1)
