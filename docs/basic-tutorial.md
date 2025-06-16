@@ -447,7 +447,7 @@ To do this, we:
 1. Call `bind(host:port:)` on the builder with the address and port we
    want to use to listen for client requests, this starts the server.
 
-Once the server has started succesfully we print out the port the server is
+Once the server has started successfully we print out the port the server is
 listening on. We then `wait()` on the server's `onClose` future to stop the
 program from exiting (since `close()` is never called on the server).
 
