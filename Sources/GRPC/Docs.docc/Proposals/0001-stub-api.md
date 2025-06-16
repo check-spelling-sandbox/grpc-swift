@@ -75,7 +75,7 @@ represent streams of messages. Objects where messages are produced by users
 public enum ClientRequest {
   /// A request created by the client containing a single message.
   public struct Single<Message: Sendable>: Sendable {
-    /// Metadata sent at the begining of the RPC.
+    /// Metadata sent at the beginning of the RPC.
     public var metadata: Metadata
 
     /// The message to send to the server.
@@ -91,7 +91,7 @@ public enum ClientRequest {
   public struct Stream<Message: Sendable>: Sendable {
     public typealias Producer = @Sendable (RPCWriter<Message>) async throws -> Void
 
-    /// Metadata sent at the begining of the RPC.
+    /// Metadata sent at the beginning of the RPC.
     public var metadata: Metadata
 
     /// A closure which produces and writes messages into a writer destined for
@@ -112,7 +112,7 @@ public enum ClientRequest {
 public enum ServerRequest {
   /// A request received at the server containing a single message.
   public struct Single<Message: Sendable>: Sendable {
-    /// Metadata received from the client at the begining of the RPC.
+    /// Metadata received from the client at the beginning of the RPC.
     public var metadata: Metadata
 
     /// The message received from the client.
@@ -126,7 +126,7 @@ public enum ServerRequest {
 
   /// A request received at the server containing a stream of messages.
   public struct Stream<Message: Sendable>: Sendable {
-    /// Metadata received from the client at the begining of the RPC.
+    /// Metadata received from the client at the beginning of the RPC.
     public var metadata: Metadata
 
     /// An `AsyncSequence` of messages received from the client.
