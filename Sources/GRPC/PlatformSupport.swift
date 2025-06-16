@@ -274,7 +274,7 @@ public enum PlatformSupport {
   ) -> ClientBootstrapProtocol {
     let bootstrap = self.makeClientBootstrap(group: group, logger: logger)
 
-    guard let tlsConfigruation = tlsConfiguration else {
+    guard let tlsConfiguration = tlsConfiguration else {
       return bootstrap
     }
 
@@ -282,7 +282,7 @@ public enum PlatformSupport {
     if #available(macOS 10.14, iOS 12.0, tvOS 12.0, watchOS 6.0, *),
       let transportServicesBootstrap = bootstrap as? NIOTSConnectionBootstrap
     {
-      return transportServicesBootstrap.tlsOptions(from: tlsConfigruation)
+      return transportServicesBootstrap.tlsOptions(from: tlsConfiguration)
     }
     #endif
 

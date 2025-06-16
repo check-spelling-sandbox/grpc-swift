@@ -206,7 +206,7 @@ class PlatformSupportTests: GRPCTestCase {
     #endif
   }
 
-  func testIsTLSConfigruationCompatible() {
+  func testIsTLSConfigurationCompatible() {
     #if canImport(Network)
     #if canImport(NIOSSL)
     guard #available(macOS 10.14, iOS 12.0, tvOS 12.0, watchOS 6.0, *) else { return }
