@@ -593,7 +593,7 @@ extension HTTP2ToRawGRPCStateMachine.RequestOpenResponseOpenState {
     let state: HTTP2ToRawGRPCStateMachine.State
 
     if endStream {
-      // End stream, so move to the closed state. Any end of request stream events events will
+      // End stream, so move to the closed state. Any end of request stream events will
       // happen as a result of reading from the closed state.
       state = .requestClosedResponseOpen(.init(from: self))
     } else {
