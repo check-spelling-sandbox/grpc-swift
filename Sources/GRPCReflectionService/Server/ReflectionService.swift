@@ -158,16 +158,16 @@ internal struct ReflectionServiceData: Sendable {
         contentsOf: fileDescriptorProto.service.map { fileDescriptorProto.package + "." + $0.name }
       )
       // Populating the <symbol, file name> dictionary.
-      for qualifiedSybolName in fileDescriptorProto.qualifiedSymbolNames {
+      for qualifiedSymbolName in fileDescriptorProto.qualifiedSymbolNames {
         let oldValue = self.fileNameBySymbol.updateValue(
           fileDescriptorProto.name,
-          forKey: qualifiedSybolName
+          forKey: qualifiedSymbolName
         )
         if let oldValue = oldValue {
           throw GRPCStatus(
             code: .alreadyExists,
             message:
-              "The \(qualifiedSybolName) symbol from \(fileDescriptorProto.name) already exists in \(oldValue)."
+              "The \(qualifiedSymbolName) symbol from \(fileDescriptorProto.name) already exists in \(oldValue)."
           )
         }
       }
