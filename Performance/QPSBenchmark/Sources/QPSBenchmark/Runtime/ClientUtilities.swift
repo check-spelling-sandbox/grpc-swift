@@ -18,7 +18,7 @@ import GRPC
 import NIOCore
 
 extension Grpc_Testing_ClientConfig {
-  /// Work out how many theads to use - defaulting to core count if not specified.
+  /// Work out how many threads to use - defaulting to core count if not specified.
   /// - returns: The number of threads to use.
   func threadsToUse() -> Int {
     return self.asyncClientThreads > 0 ? Int(self.asyncClientThreads) : System.coreCount
