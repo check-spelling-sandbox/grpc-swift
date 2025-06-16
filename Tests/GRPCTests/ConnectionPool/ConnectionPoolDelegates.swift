@@ -76,7 +76,7 @@ final class IsConnectingDelegate: GRPCConnectionPoolDelegate {
   // No-op.
   func connectionRemoved(id: GRPCConnectionID) {}
 
-  // Conection failures put the connection into a backing off state, we consider that to still
+  // Connection failures put the connection into a backing off state, we consider that to still
   // be 'connecting' at this point.
   func connectFailed(id: GRPCConnectionID, error: Error) {}
 
