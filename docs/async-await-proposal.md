@@ -326,7 +326,7 @@ print("update completed with status: \(status.code)")
 ```
 
 As highlighted in the code comments above, it allows the user to write
-staight-line code, using the new async/await language support, and for
+straight-line code, using the new async/await language support, and for
 consuming responses from an `AsyncSequence` using the new `for try await ... in
 { ... }` idiom.
 
