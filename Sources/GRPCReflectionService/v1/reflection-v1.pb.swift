@@ -372,14 +372,14 @@ extension Grpc_Reflection_V1_ServerReflectionRequest: SwiftProtobuf.Message, Swi
       }()
       case 5: try {
         var v: Grpc_Reflection_V1_ExtensionRequest?
-        var hadOneofValue = false
+        var hadOneOfValue = false
         if let current = self.messageRequest {
-          hadOneofValue = true
+          hadOneOfValue = true
           if case .fileContainingExtension(let m) = current {v = m}
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {
-          if hadOneofValue {try decoder.handleConflictingOneOf()}
+          if hadOneOfValue {try decoder.handleConflictingOneOf()}
           self.messageRequest = .fileContainingExtension(v)
         }
       }()
@@ -505,53 +505,53 @@ extension Grpc_Reflection_V1_ServerReflectionResponse: SwiftProtobuf.Message, Sw
       case 2: try { try decoder.decodeSingularMessageField(value: &self._originalRequest) }()
       case 4: try {
         var v: Grpc_Reflection_V1_FileDescriptorResponse?
-        var hadOneofValue = false
+        var hadOneOfValue = false
         if let current = self.messageResponse {
-          hadOneofValue = true
+          hadOneOfValue = true
           if case .fileDescriptorResponse(let m) = current {v = m}
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {
-          if hadOneofValue {try decoder.handleConflictingOneOf()}
+          if hadOneOfValue {try decoder.handleConflictingOneOf()}
           self.messageResponse = .fileDescriptorResponse(v)
         }
       }()
       case 5: try {
         var v: Grpc_Reflection_V1_ExtensionNumberResponse?
-        var hadOneofValue = false
+        var hadOneOfValue = false
         if let current = self.messageResponse {
-          hadOneofValue = true
+          hadOneOfValue = true
           if case .allExtensionNumbersResponse(let m) = current {v = m}
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {
-          if hadOneofValue {try decoder.handleConflictingOneOf()}
+          if hadOneOfValue {try decoder.handleConflictingOneOf()}
           self.messageResponse = .allExtensionNumbersResponse(v)
         }
       }()
       case 6: try {
         var v: Grpc_Reflection_V1_ListServiceResponse?
-        var hadOneofValue = false
+        var hadOneOfValue = false
         if let current = self.messageResponse {
-          hadOneofValue = true
+          hadOneOfValue = true
           if case .listServicesResponse(let m) = current {v = m}
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {
-          if hadOneofValue {try decoder.handleConflictingOneOf()}
+          if hadOneOfValue {try decoder.handleConflictingOneOf()}
           self.messageResponse = .listServicesResponse(v)
         }
       }()
       case 7: try {
         var v: Grpc_Reflection_V1_ErrorResponse?
-        var hadOneofValue = false
+        var hadOneOfValue = false
         if let current = self.messageResponse {
-          hadOneofValue = true
+          hadOneOfValue = true
           if case .errorResponse(let m) = current {v = m}
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {
-          if hadOneofValue {try decoder.handleConflictingOneOf()}
+          if hadOneOfValue {try decoder.handleConflictingOneOf()}
           self.messageResponse = .errorResponse(v)
         }
       }()
