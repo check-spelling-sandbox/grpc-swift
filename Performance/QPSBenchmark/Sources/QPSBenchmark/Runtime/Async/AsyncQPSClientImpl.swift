@@ -288,6 +288,6 @@ func makeAsyncClient(config: Grpc_Testing_ClientConfig) throws -> AsyncQPSClient
        .streamingBothWays:
     throw GRPCStatus(code: .unimplemented, message: "Client Type not implemented")
   case .UNRECOGNIZED:
-    throw GRPCStatus(code: .invalidArgument, message: "Unrecognised client rpc type")
+    throw GRPCStatus(code: .invalidArgument, message: "Unrecognized client rpc type")
   }
 }

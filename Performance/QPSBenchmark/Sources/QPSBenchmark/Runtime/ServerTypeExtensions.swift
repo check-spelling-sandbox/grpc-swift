@@ -29,7 +29,7 @@ extension Grpc_Testing_ServerType: CustomStringConvertible {
     case .callbackServer:
       return "callbackServer"
     case let .UNRECOGNIZED(value):
-      return "unrecognised\(value)"
+      return "unrecognized\(value)"
     }
   }
 }

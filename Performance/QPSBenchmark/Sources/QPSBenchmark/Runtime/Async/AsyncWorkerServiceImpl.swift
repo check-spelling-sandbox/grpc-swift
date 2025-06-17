@@ -222,7 +222,7 @@ actor AsyncWorkerServiceImpl: Grpc_Testing_WorkerServiceAsyncProvider {
          .callbackServer:
       throw GRPCStatus(code: .unimplemented, message: "Server Type not implemented")
     case .UNRECOGNIZED:
-      throw GRPCStatus(code: .invalidArgument, message: "Unrecognised server type")
+      throw GRPCStatus(code: .invalidArgument, message: "Unrecognized server type")
     }
   }
 
@@ -329,7 +329,7 @@ actor AsyncWorkerServiceImpl: Grpc_Testing_WorkerServiceAsyncProvider {
          .callbackClient:
       throw GRPCStatus(code: .unimplemented, message: "Client Type not implemented")
     case .UNRECOGNIZED:
-      throw GRPCStatus(code: .invalidArgument, message: "Unrecognised client type")
+      throw GRPCStatus(code: .invalidArgument, message: "Unrecognized client type")
     }
   }
 }

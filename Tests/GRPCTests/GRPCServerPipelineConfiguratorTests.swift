@@ -98,7 +98,7 @@ class GRPCServerPipelineConfiguratorTests: GRPCTestCase {
     self.assertGRPCWebToHTTP2Handler(isPresent: true)
   }
 
-  func testUnrecognisedALPNCloses() {
+  func testUnrecognizedALPNCloses() {
     self.setUp(tls: true, requireALPN: true)
     let event = TLSUserEvent.handshakeCompleted(negotiatedProtocol: "unsupported")
     self.channel.pipeline.fireUserInboundEventTriggered(event)

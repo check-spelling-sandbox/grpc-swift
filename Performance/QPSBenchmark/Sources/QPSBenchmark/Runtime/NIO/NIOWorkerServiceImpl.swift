@@ -213,7 +213,7 @@ class NIOWorkerServiceImpl: Grpc_Testing_WorkerServiceProvider {
     case .callbackServer:
       throw GRPCStatus(code: .unimplemented, message: "Server Type not implemented")
     case .UNRECOGNIZED:
-      throw GRPCStatus(code: .invalidArgument, message: "Unrecognised server type")
+      throw GRPCStatus(code: .invalidArgument, message: "Unrecognized server type")
     }
   }
 
@@ -333,7 +333,7 @@ class NIOWorkerServiceImpl: Grpc_Testing_WorkerServiceProvider {
     case .callbackClient:
       throw GRPCStatus(code: .unimplemented, message: "Client Type not implemented")
     case .UNRECOGNIZED:
-      throw GRPCStatus(code: .invalidArgument, message: "Unrecognised client type")
+      throw GRPCStatus(code: .invalidArgument, message: "Unrecognized client type")
     }
   }
 }
