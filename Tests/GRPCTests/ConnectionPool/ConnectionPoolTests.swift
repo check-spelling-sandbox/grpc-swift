@@ -994,7 +994,7 @@ final class ConnectionPoolTests: GRPCTestCase {
       XCTAssertNoThrow(try w.wait())
     }
 
-    // The utilisation threshold before bringing up a new connection is 0.9; we have 8 open streams
+    // The utilization threshold before bringing up a new connection is 0.9; we have 8 open streams
     // (out of 10) now so opening the next should trigger a connect on the other connection.
     let w9 = pool.makeStream(deadline: .distantFuture, logger: self.logger) {
       $0.eventLoop.makeSucceededVoidFuture()
