@@ -36,7 +36,7 @@ final class AsyncQPSServerImpl: AsyncQPSServer {
     return ServerInfo(threadCount: self.threadCount, port: port)
   }
 
-  /// Initialisation.
+  /// Initialization.
   /// - parameters:
   ///     - config: Description of the type of server required.
   init(config: Grpc_Testing_ServerConfig) async throws {

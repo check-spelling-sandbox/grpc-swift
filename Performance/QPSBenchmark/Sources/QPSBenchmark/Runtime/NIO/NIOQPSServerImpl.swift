@@ -31,7 +31,7 @@ final class NIOQPSServerImpl: NIOQPSServer {
 
   private let logger = Logger(label: "AsyncQPSServer")
 
-  /// Initialisation.
+  /// Initialization.
   /// - parameters:
   ///     - config: Description of the type of server required.
   ///     - whenBound: Called when the server has successful bound to a port.

@@ -101,7 +101,7 @@ public struct GRPCAsyncClientStreamingCall<Request: Sendable, Response: Sendable
   }
 
   /// We expose this as the only non-private initializer so that the caller
-  /// knows that invocation is part of initialisation.
+  /// knows that invocation is part of initialization.
   internal static func makeAndInvoke(call: Call<Request, Response>) -> Self {
     let asyncCall = Self(call: call)
 
