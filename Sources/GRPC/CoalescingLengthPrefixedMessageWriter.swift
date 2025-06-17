@@ -29,7 +29,7 @@ internal struct CoalescingLengthPrefixedMessageWriter {
   /// frame.
   ///
   /// The value of 16k was chosen empirically. We subtract the length of the message header
-  /// as `ByteBuffer` reserve capacity in powers of two and want to avoid overallocating.
+  /// as `ByteBuffer` reserve capacity in powers of two and want to avoid over-allocating.
   static let singleBufferSizeLimit = 16384 - Self.metadataLength
 
   /// The compression algorithm to use, if one should be used.
