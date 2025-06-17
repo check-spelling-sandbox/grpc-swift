@@ -23,36 +23,36 @@ static inline int CGRPCZlib_deflateInit2(z_streamp stream, int level, int method
   return deflateInit2(stream, level, method, windowBits, memLevel, strategy);
 }
 
-static inline unsigned long CGRPCZlib_deflateBound(z_streamp strm, unsigned long sourceLen) {
-  return deflateBound(strm, sourceLen);
+static inline unsigned long CGRPCZlib_deflateBound(z_streamp stream, unsigned long sourceLen) {
+  return deflateBound(stream, sourceLen);
 }
 
-static inline int CGRPCZlib_deflate(z_streamp strm, int flush) {
-  return deflate(strm, flush);
+static inline int CGRPCZlib_deflate(z_streamp stream, int flush) {
+  return deflate(stream, flush);
 }
 
-static inline int CGRPCZlib_deflateReset(z_streamp strm) {
-  return deflateReset(strm);
+static inline int CGRPCZlib_deflateReset(z_streamp stream) {
+  return deflateReset(stream);
 }
 
-static inline int CGRPCZlib_deflateEnd(z_streamp strm) {
-  return deflateEnd(strm);
+static inline int CGRPCZlib_deflateEnd(z_streamp stream) {
+  return deflateEnd(stream);
 }
 
 static inline int CGRPCZlib_inflateInit2(z_streamp stream, int windowBits) {
   return inflateInit2(stream, windowBits);
 }
 
-static inline int CGRPCZlib_inflate(z_streamp strm, int flush) {
-  return inflate(strm, flush);
+static inline int CGRPCZlib_inflate(z_streamp stream, int flush) {
+  return inflate(stream, flush);
 }
 
-static inline int CGRPCZlib_inflateReset(z_streamp strm) {
-  return inflateReset(strm);
+static inline int CGRPCZlib_inflateReset(z_streamp stream) {
+  return inflateReset(stream);
 }
 
-static inline int CGRPCZlib_inflateEnd(z_streamp strm) {
-  return inflateEnd(strm);
+static inline int CGRPCZlib_inflateEnd(z_streamp stream) {
+  return inflateEnd(stream);
 }
 
 static inline Bytef *CGRPCZlib_castVoidToBytefPointer(void *in) {
