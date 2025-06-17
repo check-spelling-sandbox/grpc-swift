@@ -422,7 +422,7 @@ extension EventLoopGroup {
   ) {
     precondition(
       self.isCompatible(with: tlsConfiguration),
-      "Unsupported 'EventLoopGroup' and 'GRPCLSConfiguration' pairing (Network.framework backed TLS configurations MUST use an EventLoopGroup from NIOTransportServices)",
+      "Unsupported 'EventLoopGroup' and 'GRPCTLSConfiguration' pairing (Network.framework backed TLS configurations MUST use an EventLoopGroup from NIOTransportServices)",
       file: file,
       line: line
     )
