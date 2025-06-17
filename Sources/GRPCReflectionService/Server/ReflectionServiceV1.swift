@@ -32,7 +32,7 @@ internal final class ReflectionServiceProviderV1: Grpc_Reflection_V1_ServerRefle
     _ fileName: String
   ) -> Result<Grpc_Reflection_V1_ServerReflectionResponse.OneOf_MessageResponse, GRPCStatus> {
     return self.protoRegistry
-      .serialisedFileDescriptorProtosForDependenciesOfFile(named: fileName)
+      .serializedFileDescriptorProtosForDependenciesOfFile(named: fileName)
       .map { fileDescriptorProtos in
         Grpc_Reflection_V1_ServerReflectionResponse.OneOf_MessageResponse.fileDescriptorResponse(
           .with {

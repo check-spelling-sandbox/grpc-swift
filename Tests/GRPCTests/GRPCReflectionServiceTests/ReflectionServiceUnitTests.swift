@@ -168,12 +168,12 @@ final class ReflectionServiceUnitTests: GRPCTestCase {
 
   // Testing the serializedFileDescriptorProto method in different cases.
 
-  func testSerialisedFileDescriptorProtosForDependenciesOfFile() throws {
+  func testSerializedFileDescriptorProtosForDependenciesOfFile() throws {
     var protos = makeProtosWithDependencies()
     let registry = try ReflectionServiceData(fileDescriptors: protos)
     let serializedFileDescriptorProtosResult =
       registry
-      .serialisedFileDescriptorProtosForDependenciesOfFile(named: "bar1.proto")
+      .serializedFileDescriptorProtosForDependenciesOfFile(named: "bar1.proto")
 
     switch serializedFileDescriptorProtosResult {
     case .success(let serializedFileDescriptorProtos):
@@ -224,12 +224,12 @@ final class ReflectionServiceUnitTests: GRPCTestCase {
     }
   }
 
-  func testSerialisedFileDescriptorProtosForDependenciesOfFileComplexDependencyGraph() throws {
+  func testSerializedFileDescriptorProtosForDependenciesOfFileComplexDependencyGraph() throws {
     var protos = makeProtosWithComplexDependencies()
     let registry = try ReflectionServiceData(fileDescriptors: protos)
     let serializedFileDescriptorProtosResult =
       registry
-      .serialisedFileDescriptorProtosForDependenciesOfFile(named: "foo0.proto")
+      .serializedFileDescriptorProtosForDependenciesOfFile(named: "foo0.proto")
     switch serializedFileDescriptorProtosResult {
     case .success(let serializedFileDescriptorProtos):
       let fileDescriptorProtos = try serializedFileDescriptorProtos.map {
@@ -279,7 +279,7 @@ final class ReflectionServiceUnitTests: GRPCTestCase {
     }
   }
 
-  func testSerialisedFileDescriptorProtosForDependenciesOfFileDependencyLoops() throws {
+  func testSerializedFileDescriptorProtosForDependenciesOfFileDependencyLoops() throws {
     var protos = makeProtosWithDependencies()
     // Making dependencies of the "bar1.proto" to depend on "bar1.proto".
     protos[1].dependency.append("bar1.proto")
@@ -288,7 +288,7 @@ final class ReflectionServiceUnitTests: GRPCTestCase {
     let registry = try ReflectionServiceData(fileDescriptors: protos)
     let serializedFileDescriptorProtosResult =
       registry
-      .serialisedFileDescriptorProtosForDependenciesOfFile(named: "bar1.proto")
+      .serializedFileDescriptorProtosForDependenciesOfFile(named: "bar1.proto")
     switch serializedFileDescriptorProtosResult {
     case .success(let serializedFileDescriptorProtos):
       let fileDescriptorProtos = try serializedFileDescriptorProtos.map {
@@ -337,11 +337,11 @@ final class ReflectionServiceUnitTests: GRPCTestCase {
     }
   }
 
-  func testSerialisedFileDescriptorProtosForDependenciesOfFileInvalidFile() throws {
+  func testSerializedFileDescriptorProtosForDependenciesOfFileInvalidFile() throws {
     let protos = makeProtosWithDependencies()
     let registry = try ReflectionServiceData(fileDescriptors: protos)
     let serializedFileDescriptorProtosForDependenciesOfFileResult =
-      registry.serialisedFileDescriptorProtosForDependenciesOfFile(named: "invalid.proto")
+      registry.serializedFileDescriptorProtosForDependenciesOfFile(named: "invalid.proto")
 
     XCTAssertThrowsGRPCStatus(try serializedFileDescriptorProtosForDependenciesOfFileResult.get()) {
       status in
@@ -355,12 +355,12 @@ final class ReflectionServiceUnitTests: GRPCTestCase {
     }
   }
 
-  func testSerialisedFileDescriptorProtosForDependenciesOfFileDependencyNotProto() throws {
+  func testSerializedFileDescriptorProtosForDependenciesOfFileDependencyNotProto() throws {
     var protos = makeProtosWithDependencies()
     protos[0].dependency.append("invalidDependency")
     let registry = try ReflectionServiceData(fileDescriptors: protos)
     let serializedFileDescriptorProtosForDependenciesOfFileResult =
-      registry.serialisedFileDescriptorProtosForDependenciesOfFile(named: "bar1.proto")
+      registry.serializedFileDescriptorProtosForDependenciesOfFile(named: "bar1.proto")
 
     XCTAssertThrowsGRPCStatus(try serializedFileDescriptorProtosForDependenciesOfFileResult.get()) {
       status in

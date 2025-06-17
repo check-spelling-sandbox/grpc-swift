@@ -202,7 +202,7 @@ internal struct ReflectionServiceData: Sendable {
     }
   }
 
-  internal func serialisedFileDescriptorProtosForDependenciesOfFile(
+  internal func serializedFileDescriptorProtosForDependenciesOfFile(
     named fileName: String
   ) -> Result<[Data], GRPCStatus> {
     var toVisit = Deque<String>()

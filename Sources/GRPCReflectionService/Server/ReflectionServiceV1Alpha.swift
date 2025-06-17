@@ -34,7 +34,7 @@ internal final class ReflectionServiceProviderV1Alpha:
     _ fileName: String
   ) -> Result<Grpc_Reflection_V1alpha_ServerReflectionResponse.OneOf_MessageResponse, GRPCStatus> {
     return self.protoRegistry
-      .serialisedFileDescriptorProtosForDependenciesOfFile(named: fileName)
+      .serializedFileDescriptorProtosForDependenciesOfFile(named: fileName)
       .map { fileDescriptorProtos in
         Grpc_Reflection_V1alpha_ServerReflectionResponse.OneOf_MessageResponse
           .fileDescriptorResponse(
