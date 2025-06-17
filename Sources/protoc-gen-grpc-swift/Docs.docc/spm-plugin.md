@@ -12,7 +12,7 @@ this article.
 
 The plugin works by running the system installed `protoc` compiler with the `protoc-gen-grpc-swift` plugin
 for specified `.proto` files in your targets source folder. Furthermore, the plugin allows defining a
-configuration file which will be used to customize the invocation of `protoc`.
+configuration file which will be used to customise the invocation of `protoc`.
 
 ### Installing the protoc compiler
 
