@@ -758,7 +758,7 @@ extension GRPCClientStateMachine.State {
     _ trailers: HPACKHeaders
   ) -> Result<GRPCStatus, ReceiveEndOfResponseStreamError> {
     // We need to check whether we have a valid HTTP status in the headers, if we don't then we also
-    // need to check whether we have a gRPC status as it should take preference over a synthesising
+    // need to check whether we have a gRPC status as it should take preference over a synthesizing
     // one from the ":status".
     //
     // See: https://github.com/grpc/grpc/blob/master/doc/http-grpc-status-mapping.md
