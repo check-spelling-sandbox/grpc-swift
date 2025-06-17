@@ -32,7 +32,7 @@ import Security
 public struct GRPCTLSConfiguration: Sendable {
   fileprivate enum Backend: Sendable {
     #if canImport(NIOSSL)
-    /// Configuration for NIOSSSL.
+    /// Configuration for NIOSSL.
     case nio(NIOConfiguration)
     #endif
     #if canImport(Network)
