@@ -32,7 +32,7 @@ final class NIOPingPongRequestMaker: NIORequestMaker {
   /// Stops more requests being made after stop is requested.
   private var stopRequested = false
 
-  /// Initialiser to gather requirements.
+  /// Initializer to gather requirements.
   /// - Parameters:
   ///    - config: config from the driver describing what to do.
   ///    - client: client interface to the server.

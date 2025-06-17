@@ -25,7 +25,7 @@ final class AsyncUnaryRequestMaker: AsyncRequestMaker {
   private let logger: Logger
   private let stats: StatsWithLock
 
-  /// Initialiser to gather requirements.
+  /// Initializer to gather requirements.
   /// - Parameters:
   ///    - config: config from the driver describing what to do.
   ///    - client: client interface to the server.

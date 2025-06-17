@@ -19,7 +19,7 @@ import Logging
 
 /// Implement to provide a method of making requests to a server from a client.
 protocol AsyncRequestMaker: Sendable {
-  /// Initialiser to gather requirements.
+  /// Initializer to gather requirements.
   /// - Parameters:
   ///    - config: config from the driver describing what to do.
   ///    - client: client interface to the server.

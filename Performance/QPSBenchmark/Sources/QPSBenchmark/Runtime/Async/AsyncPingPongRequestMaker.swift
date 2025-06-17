@@ -35,7 +35,7 @@ final class AsyncPingPongRequestMaker: AsyncRequestMaker, @unchecked Sendable {
   /// Stops more requests being made after stop is requested.
   private let stopRequested = ManagedAtomic<Bool>(false)
 
-  /// Initialiser to gather requirements.
+  /// Initializer to gather requirements.
   /// - Parameters:
   ///    - config: config from the driver describing what to do.
   ///    - client: client interface to the server.
