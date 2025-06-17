@@ -53,7 +53,7 @@ public struct ProtobufSerializer<Message: SwiftProtobuf.Message>: MessageSeriali
     // Serialize the message.
     let serialized = try message.serializedData()
 
-    // Allocate enough space and an extra 5 leading bytes. This a minor optimisation win: the length
+    // Allocate enough space and an extra 5 leading bytes. This a minor optimization win: the length
     // prefixed message writer can re-use the leading 5 bytes without needing to allocate a new
     // buffer and copy over the serialized message.
     var buffer = allocator.buffer(capacity: serialized.count + 5)
@@ -88,7 +88,7 @@ public struct GRPCPayloadSerializer<Message: GRPCPayload>: MessageSerializer {
 
   @inlinable
   public func serialize(_ message: Message, allocator: ByteBufferAllocator) throws -> ByteBuffer {
-    // Reserve 5 leading bytes. This a minor optimisation win: the length prefixed message writer
+    // Reserve 5 leading bytes. This a minor optimization win: the length prefixed message writer
     // can re-use the leading 5 bytes without needing to allocate a new buffer and copy over the
     // serialized message.
     var buffer = allocator.buffer(repeating: 0, count: 5)
