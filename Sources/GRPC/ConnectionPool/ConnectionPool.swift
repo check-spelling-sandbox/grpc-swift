@@ -58,7 +58,7 @@ internal final class ConnectionPool {
   /// Connections are accessed by their ID for connection state changes (infrequent) and when
   /// streams are closed (frequent). However when choosing which connection to succeed a waiter
   /// with (frequent) requires the connections to be ordered by their availability. A dictionary
-  /// might not be the most efficient data structure (a queue prioritised by stream availability may
+  /// might not be the most efficient data structure (a queue prioritized by stream availability may
   /// be a better choice given the number of connections is likely to be very low in practice).
   @usableFromInline
   internal var _connections: [ConnectionManagerID: PerConnectionState]
