@@ -331,7 +331,7 @@ extension GRPCClientChannelHandler: ChannelInboundHandler {
 
     // We don't need to handle other frame type, just drop them instead.
     default:
-      // TODO: synthesise a more precise `GRPCStatus` from RST_STREAM frames in accordance
+      // TODO: synthesize a more precise `GRPCStatus` from RST_STREAM frames in accordance
       // with: https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-HTTP2.md#errors
       break
     }

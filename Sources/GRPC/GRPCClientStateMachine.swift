@@ -315,7 +315,7 @@ struct GRPCClientStateMachine {
   }
 
   /// Receive a DATA frame with the end stream flag set. Determines whether it is safe for the
-  /// caller to ignore the end stream flag or whether a synthesised status should be forwarded.
+  /// caller to ignore the end stream flag or whether a synthesized status should be forwarded.
   ///
   /// Receiving a DATA frame with the end stream flag set is unexpected: the specification dictates
   /// that an RPC should be ended by the server sending the client a HEADERS frame with end stream
