@@ -471,7 +471,7 @@ struct _BroadcastSequenceStateMachine<Element: Sendable>: Sendable {
         _ continuation: ConsumerContinuation,
         forSubscription id: _BroadcastSequenceStateMachine<Element>.Subscriptions.ID
       ) -> OnSetContinuation {
-        // 'next(id)' must be checked first: an element might've been provided between the lock
+        // 'next(id)' must be checked first: an element might have been provided between the lock
         // being dropped and a continuation being created and the lock being acquired again.
         switch self.next(id) {
         case .return(let resultAndProducers):
@@ -708,7 +708,7 @@ struct _BroadcastSequenceStateMachine<Element: Sendable>: Sendable {
         _ continuation: ConsumerContinuation,
         forSubscription id: _BroadcastSequenceStateMachine<Element>.Subscriptions.ID
       ) -> OnSetContinuation {
-        // 'next(id)' must be checked first: an element might've been provided between the lock
+        // 'next(id)' must be checked first: an element might have been provided between the lock
         // being dropped and a continuation being created and the lock being acquired again.
         switch self.next(id) {
         case .return(let resultAndProducers):
