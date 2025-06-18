@@ -333,7 +333,7 @@ final class ServerRPCExecutorTests: XCTestCase {
     }
 
     XCTAssertEqual(counter1.value, 1)
-    // Zero because the RPC should've been rejected by the second interceptor.
+    // Zero because the RPC should have been rejected by the second interceptor.
     XCTAssertEqual(counter2.value, 0)
   }
 
