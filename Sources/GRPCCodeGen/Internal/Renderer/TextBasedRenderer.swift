@@ -894,7 +894,7 @@ struct TextBasedRenderer: RendererProtocol {
   /// Renders the specified function kind.
   func renderedFunctionKind(_ functionKind: FunctionKind) -> String {
     switch functionKind {
-    case .initializer(let isFailable): return "init\(isFailable ? "?" : "")"
+    case .initializer(let isFallible): return "init\(isFallible ? "?" : "")"
     case .function(let name, let isStatic):
       return (isStatic ? "static " : "") + "func \(name)"
 
