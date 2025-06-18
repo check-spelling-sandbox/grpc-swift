@@ -471,7 +471,7 @@ struct _BroadcastSequenceStateMachine<Element: Sendable>: Sendable {
         _ continuation: ConsumerContinuation,
         forSubscription id: _BroadcastSequenceStateMachine<Element>.Subscriptions.ID
       ) -> OnSetContinuation {
-        // 'next(id)' must be checked first: an element might've been provided between the lock
+        // 'next(id)' must be checked first: an element might have been provided between the lock
         // being dropped and a continuation being created and the lock being acquired again.
         switch self.next(id) {
         case .return(let resultAndProducers):
@@ -708,7 +708,7 @@ struct _BroadcastSequenceStateMachine<Element: Sendable>: Sendable {
         _ continuation: ConsumerContinuation,
         forSubscription id: _BroadcastSequenceStateMachine<Element>.Subscriptions.ID
       ) -> OnSetContinuation {
-        // 'next(id)' must be checked first: an element might've been provided between the lock
+        // 'next(id)' must be checked first: an element might have been provided between the lock
         // being dropped and a continuation being created and the lock being acquired again.
         switch self.next(id) {
         case .return(let resultAndProducers):
@@ -1575,7 +1575,7 @@ extension _BroadcastSequenceStateMachine {
       @usableFromInline
       var nextElementID: _BroadcastSequenceStateMachine<Element>.Elements.ID
 
-      /// A continuation which which will be resumed when the next element becomes available.
+      /// A continuation which will be resumed when the next element becomes available.
       @usableFromInline
       var continuation: ConsumerContinuation?
 
@@ -1592,7 +1592,7 @@ extension _BroadcastSequenceStateMachine {
 
       /// Returns and sets the continuation to `nil` if one exists.
       ///
-      /// The next element ID is advanced if a contination exists.
+      /// The next element ID is advanced if a continuation exists.
       ///
       /// - Returns: The continuation, if one existed.
       @inlinable

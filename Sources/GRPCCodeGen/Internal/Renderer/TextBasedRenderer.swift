@@ -43,7 +43,7 @@ final class StringCodeWriter {
   internal let indentation: Int
 
   /// Whether the next call to `writeLine` will continue writing to the last
-  /// stored line. Otherwise a new line is appended.
+  /// stored line. Otherwise, a new line is appended.
   private var nextWriteAppendsToLastLine: Bool = false
 
   /// Creates a new empty writer.
@@ -894,7 +894,7 @@ struct TextBasedRenderer: RendererProtocol {
   /// Renders the specified function kind.
   func renderedFunctionKind(_ functionKind: FunctionKind) -> String {
     switch functionKind {
-    case .initializer(let isFailable): return "init\(isFailable ? "?" : "")"
+    case .initializer(let isFallible): return "init\(isFallible ? "?" : "")"
     case .function(let name, let isStatic):
       return (isStatic ? "static " : "") + "func \(name)"
 

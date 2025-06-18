@@ -581,8 +581,8 @@ enum FunctionKind: Equatable, Codable, Sendable {
 
   /// An initializer.
   ///
-  /// For example: `init()`, or `init?()` when `failable` is `true`.
-  case initializer(failable: Bool)
+  /// For example: `init()`, or `init?()` when `fallible` is `true`.
+  case initializer(fallible: Bool)
 
   /// A function or a method. Can be static.
   ///
@@ -1486,8 +1486,8 @@ extension Declaration {
 }
 
 extension FunctionKind {
-  /// Returns a non-failable initializer, for example `init()`.
-  static var initializer: Self { .initializer(failable: false) }
+  /// Returns a non-fallible initializer, for example `init()`.
+  static var initializer: Self { .initializer(fallible: false) }
 
   /// Returns a non-static function kind.
   static func function(name: String) -> Self {
